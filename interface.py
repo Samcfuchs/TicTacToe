@@ -15,7 +15,7 @@ class Game:
         # Add ends to this list as they are created
         if player1 == 'human':
             from human import Human
-            player1 = Human()
+            player1 = Human(1)
         elif player1 == 'roteai':
             from roteAI import roteAI
             player1 = roteAI()
@@ -25,7 +25,7 @@ class Game:
 
         if player2 == 'human':
             from human import Human
-            player2 = Human()
+            player2 = Human(2)
         elif player2 == 'roteai':
             raise RuntimeError
         elif player2 == 'learnai':
@@ -37,9 +37,9 @@ class Game:
         self.board = [[' ',' ',' '],[' ',' ',' '],[' ',' ',' ']]
 
         # Begin playing game
-        while
+        # TODO
 
-    def is_over():
+    def is_over(self):
         if (self.board[0][0] == 'X' and self.board[0][1] == 'X' and self.board[0][2] == 'X') or\
            (self.board[0][0] == 'O' and self.board[0][1] == 'O' and self.board[0][2] == 'O'):
             return True
