@@ -1,12 +1,14 @@
 # Human Player program end
 from interface import *
 
-class Human(Player):
+class Human(Object):
     """interface for a human player"""
-    def __init__(self):
+    def __init__(player, self):
         #super(Human, self).__init__()
         self.keymap = [7,8,9,4,5,6,1,2,3] # matches numpad on keyboard
         self.choice = None
+        self.player = player
+        print_player()
         if input('Set a keymap? (0/1) '):
             self.set_keymap()
         else:
@@ -14,6 +16,11 @@ class Human(Player):
 
     def set_keymap():
         pass
+
+    def print_player():
+        print "PLAYER " + str(player)
+        print "========"
+
     def print_keymap(self):
         print 'This is your current keymap:'
         # print diagram of keymap
@@ -28,7 +35,9 @@ class Human(Player):
                self.keymap[6],self.keymap[7],self.keymap[8])
 
     def turn():
-        print 'Board'
+        # TODO
+        print_player()
+        print 'Board:'
         Game.print_board()
         print
         print 'Keymap'

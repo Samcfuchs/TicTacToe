@@ -36,6 +36,9 @@ class Game:
         self.turn = 0
         self.board = [[' ',' ',' '],[' ',' ',' '],[' ',' ',' ']]
 
+        # Begin playing game
+        while
+
     def is_over():
         if (self.board[0][0] == 'X' and self.board[0][1] == 'X' and self.board[0][2] == 'X') or\
            (self.board[0][0] == 'O' and self.board[0][1] == 'O' and self.board[0][2] == 'O'):
