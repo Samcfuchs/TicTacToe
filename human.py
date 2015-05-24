@@ -47,6 +47,7 @@ class Human:
         print
         self.choice = input('Pick a square: ')
         try:
-            keymap.index(self.choice)
+            if keymap.index(self.choice) == 1:
+            	choice = (0,0)
         except ValueError:
             print "That's not in the keymap"
