@@ -4,9 +4,10 @@ from interface import *
 class Human:
     """interface for a human player"""
     def __init__(self, player):
-	self.test = [1,2,3]
-	self.num = 1
         #super(Human, self).__init__()
+        # properties here to test access from other objects
+        self.test = [1,2,3]
+        self.num = 1
         self.keymap = [7,8,9,4,5,6,1,2,3] # matches numpad on keyboard
         self.choice = None
         self.player = player
@@ -48,6 +49,6 @@ class Human:
         self.choice = input('Pick a square: ')
         try:
             if keymap.index(self.choice) == 1:
-            	choice = (0,0)
+                choice = (0,0)
         except ValueError:
             print "That's not in the keymap"
