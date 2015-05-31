@@ -1,14 +1,8 @@
-class Player(object):
-    """A general structure for a player object"""
-    def __init__(self):
-        #super(Player, self).__init__()
-        pass
-
-
 class Game:
     """Deals with updating board and game arbitration"""
     # Note that player1 will always go first and will
     # always be X. Player2 will be O and go second.
+    
     def __init__(self):
         player1 = raw_input('Player 1: ').lower()
         player2 = raw_input('Player 2: ').lower()
