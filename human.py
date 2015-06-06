@@ -11,7 +11,7 @@ class Human:
         self.choice = None
         self.player = player
         self.print_player()
-        self.tup
+        self.result = []
         try:
             if input('Set a keymap? (0/1) '):
                 self.set_keymap()
@@ -65,27 +65,27 @@ class Human:
                 # Convert choice to tuple
                 c = self.choice
                 if c == 7:
-                    self.tup = (0,0)
+                    self.result = (0,0)
                 elif c == 8:
-                    self.tup = (0,1)
+                    self.result = (0,1)
                 elif c == 9:
-                    self.tup = (0,2)
+                    self.result = (0,2)
                 elif c == 4:
-                    self.tup = (1,0)
+                    self.result = (1,0)
                 elif c == 5:
-                    self.tup = (1,1)
+                    self.result = (1,1)
                 elif c == 6:
-                    self.tup = (1,2)
+                    self.result = (1,2) 
                 elif c == 1:
-                    self.tup = (2,0)
-                elif c == 2:
-                    self.tup = (2,1)
+                    self.result = (2,0)
+               elif c == 2:
+                    self.result = (2,1)
                 elif c == 3:
-                    self.tup = (2,2)
+                    self.result = (2,2)
                 else:
                     raise ValueError
             except ValueError:
                 print 'Please enter a valid number'
                 continue
             finally:
-		return self.tup
+		return self.list
