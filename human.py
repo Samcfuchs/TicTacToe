@@ -3,13 +3,15 @@ from interface import *
 
 class Human:
     """interface for a human player"""
-    def __init__(self, player):
+    def __init__(self, player, gameinstance):
         #super(Human, self).__init__()
         from interface import Game
+        self.gameinstance = gameinstance
         self.keymap = [7,8,9,4,5,6,1,2,3] # matches numpad on keyboard
         self.choice = None
         self.player = player
         self.print_player()
+        self.tup
         try:
             if input('Set a keymap? (0/1) '):
                 self.set_keymap()
@@ -42,11 +44,11 @@ class Human:
         # TODO
         self.print_player()
         print 'Board:'
-        Game.print_board(game1)
-        game1.print_board()
-        print game1.board
+        self.gameinstance.print_board()
+#        Game.print_board(self.gameinstance)
+#        print self.gameinstance.board
         print
-        print 'Keymap'
+        print 'Keymap:'
         self.print_keymap()
         print
         # Now we need to convert the user's input, given based on the keymap, a
