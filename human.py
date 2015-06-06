@@ -10,11 +10,13 @@ class Human:
         self.choice = None
         self.player = player
         self.print_player()
-        if input('Set a keymap? (0/1) '):
-            self.set_keymap()
-        else:
+        try:
+            if input('Set a keymap? (0/1) '):
+                self.set_keymap()
+            else:
+                self.print_keymap()
+        except SyntaxError:
             self.print_keymap()
-
     def set_keymap():
         # TODO
         pass
@@ -84,3 +86,4 @@ class Human:
                 print 'Please enter a valid number'
                 continue
             finally:
+		return self.tup
