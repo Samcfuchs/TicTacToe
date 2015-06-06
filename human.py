@@ -4,6 +4,7 @@ from interface import *
 class Human:
     """interface for a human player"""
     def __init__(self, player):
+	from interface import Game
 	self.test = [1,2,3]
 	self.num = 1
         #super(Human, self).__init__()
@@ -38,9 +39,11 @@ class Human:
 
     def turn(self):
         # TODO
-        print_player()
+        self.print_player()
         print 'Board:'
-        Game.print_board()
+        Game.print_board(game1)
+        game1.print_board()
+        print game1.board
         print
         print 'Keymap'
         self.print_keymap()
