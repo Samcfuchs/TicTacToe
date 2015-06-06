@@ -4,10 +4,8 @@ from interface import *
 class Human:
     """interface for a human player"""
     def __init__(self, player):
-	from interface import Game
-	self.test = [1,2,3]
-	self.num = 1
         #super(Human, self).__init__()
+        from interface import Game
         self.keymap = [7,8,9,4,5,6,1,2,3] # matches numpad on keyboard
         self.choice = None
         self.player = player
@@ -18,6 +16,7 @@ class Human:
             self.print_keymap()
 
     def set_keymap():
+        # TODO
         pass
 
     def print_player(self):
@@ -48,9 +47,40 @@ class Human:
         print 'Keymap'
         self.print_keymap()
         print
-        self.choice = input('Pick a square: ')
-        try:
-            if keymap.index(self.choice) == 1:
-            	choice = (0,0)
-        except ValueError:
-            print "That's not in the keymap"
+        # Now we need to convert the user's input, given based on the keymap, a
+        # value in the board. This is apparently difficult. In the end, turn
+        # should pass a tuple of the values it wants back to the Game()
+
+        # Temporarily assuming keymap is default - tests input validity
+        while True:
+            # Checks if input is a number
+            try:
+                self.choice = int(raw_input('Pick a square: '))
+                if self.choice not in keymap:
+                    raise ValueError
+                # Convert choice to tuple
+                c = self.choice
+                if c == 7:
+                    self.tup = (0,0)
+                elif c == 8:
+                    self.tup = (0,1)
+                elif c == 9:
+                    self.tup = (0,2)
+                elif c == 4:
+                    self.tup = (1,0)
+                elif c == 5:
+                    self.tup = (1,1)
+                elif c == 6:
+                    self.tup = (1,2)
+                elif c == 1:
+                    self.tup = (2,0)
+                elif c == 2:
+                    self.tup = (2,1)
+                elif c == 3:
+                    self.tup = (2,2)
+                else:
+                    raise ValueError
+            except ValueError:
+                print 'Please enter a valid number'
+                continue
+            finally:

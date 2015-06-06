@@ -1,10 +1,3 @@
-class Player(object):
-    """A general structure for a player object"""
-    def __init__(self):
-        #super(Player, self).__init__()
-        pass
-
-
 class Game:
     """Deals with updating board and game arbitration"""
     # Note that player1 will always go first and will
@@ -40,17 +33,7 @@ class Game:
 
         self.result = False
         self.turn = 0
-        self.board = [[' ',' ',' '],[' ',' ',' '],[' ',' ',' ']]
-
-        # Begin playing game
-        # TODO
-        turn = 0
-        while self.is_over() == False:
-        	if turn % 2 == 0:
-        		player1.turn()
-        	elif turn % 2 == 1:
-        		player2.turn()
-        	turn += 1
+        self.board = [[' ',' ',' '],[' ',' ',' '],[' ',' ',' ']
 
     def is_over(self):
         if (self.board[0][0] == 'X' and self.board[0][1] == 'X' and self.board[0][2] == 'X') or\
@@ -99,3 +82,13 @@ class Game:
         ''' % (self.board[0][0],self.board[0][1],self.board[0][2],\
                self.board[1][0],self.board[1][1],self.board[1][2],\
                self.board[2][0],self.board[2][1],self.board[2][2])
+
+    def play(self):
+        # TODO
+        turn = 0
+        while self.is_over() == False:
+            if turn % 2 == 0:
+                player1.turn()
+            elif turn % 2 == 1:
+                player2.turn()
+            turn += 1
